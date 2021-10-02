@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Welcome to textutils.com</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link" href="#">About us</a>
+        <a class="nav-link" href="#">Contact us</a>
+      </div>
+    </div>
+      <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+  </div>
+
+</nav>
+   <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Welcome to textutils .you Can do any things here.</strong> You should check in on some of those fields below.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+   <div class="container">
+<form action="/analyze" method="post">
+    {% csrf_token %}
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Enter your text here</label>
+  <textarea class="form-control" name='text' id="exampleFormControlTextarea1" rows="3"></textarea>
+</div>
+
+    <div class="form-check form-switch">
+  <input class="form-check-input" name="removepunc" type="checkbox" id="flexSwitchCheckDefault2">
+  <label class="form-check-label" for="flexSwitchCheckDefault2">Remove punctuation</label>
+</div>
+       <div class="form-check form-switch">
+  <input class="form-check-input" name="capitalize" type="checkbox" id="flexSwitchCheckDefault3">
+  <label class="form-check-label" for="flexSwitchCheckDefault3"> Upper Caset</label>
+</div>
+       <div class="form-check form-switch">
+  <input class="form-check-input" name="newlineremover" type="checkbox" id="flexSwitchCheckDefault4">
+  <label class="form-check-label" for="flexSwitchCheckDefault4">Remove new line</label>
+</div>
+
+        <div class="form-check form-switch">
+  <input class="form-check-input" name="spaceremover" type="checkbox" id="flexSwitchCheckDefault5">
+  <label class="form-check-label" for="flexSwitchCheckDefault5">Space remover</label>
+</div>
+
+      <button type="submit" class="btn btn-dark mt-2">Analyze text</button>
+ </form>
+   </div>
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+  </body>
+</html>
